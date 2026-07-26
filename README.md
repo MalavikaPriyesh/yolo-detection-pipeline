@@ -152,25 +152,16 @@ Input Image or Video
 
 ## Technology Stack
 
-
-
 | Component | Technology | Purpose |
-
-|---|---|---|
-
-| Deep Learning Model | YOLOv8 / Ultralytics | Performs object detection on images and video frames |
-
-| Computer Vision | OpenCV | Reads video frames, processes image arrays, and draws bounding boxes |
-
-| Data Validation | Pydantic v2 | Defines and validates structured detection output contracts |
-
-| Frontend | Streamlit | Provides an interactive interface for image/video upload and result visualization |
-
-| Image Processing | Pillow, NumPy | Handles image conversion and numerical operations |
-
-| Language | Python | Main application language |
-
-
+|------------|------------|---------|
+| Programming Language | Python 3 | Primary language for implementing the computer vision pipeline, model inference, and application logic. |
+| Object Detection Model | YOLOv8 (Ultralytics) | Performs real-time object detection by predicting object classes, confidence scores, and bounding box coordinates from images and video frames. |
+| Computer Vision | OpenCV | Handles image preprocessing, video frame extraction, annotation rendering, coordinate transformations, and visualization. |
+| Deep Learning Framework | Ultralytics | Provides pretrained YOLO models, inference APIs, and optimized detection pipelines for rapid deployment. |
+| Data Validation | Pydantic v2 | Defines strongly typed schemas for detection results, ensuring structured and validated outputs before downstream processing. |
+| Numerical Computing | NumPy | Performs array manipulation, frame processing, and numerical operations required during inference. |
+| Image Processing | Pillow (PIL) | Supports image loading, format conversion, and interoperability between Streamlit and OpenCV. |
+| User Interface | Streamlit | Provides an interactive web interface for uploading media, configuring inference parameters, visualizing detections, and exporting results. |
 
 ---
 
