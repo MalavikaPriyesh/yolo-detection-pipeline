@@ -1,6 +1,4 @@
-
-
-\# YOLO Object Detection Pipeline
+# YOLO Object Detection Pipeline
 
 
 
@@ -12,11 +10,11 @@ The pipeline is designed as a portfolio demonstration of practical deep learning
 
 
 
-\---
+---
 
 
 
-\## Overview
+## Overview
 
 
 
@@ -24,15 +22,15 @@ Robotics and autonomous systems need more than an annotated image. They need str
 
 
 
-\- Object class, such as `person`, `car`, or `dog`
+- Object class, such as `person`, `car`, or `dog`
 
-\- Detection confidence score
+- Detection confidence score
 
-\- Bounding box coordinates
+- Bounding box coordinates
 
-\- Frame dimensions and timestamp
+- Frame dimensions and timestamp
 
-\- Object area relative to the image frame
+- Object area relative to the image frame
 
 
 
@@ -40,41 +38,41 @@ This project converts raw YOLOv8 predictions into structured Pydantic models. Th
 
 
 
-\---
+---
 
 
 
-\## Features
+## Features
 
 
 
-\- Object detection using pretrained YOLOv8 models
+- Object detection using pretrained YOLOv8 models
 
-\- Image upload and video upload support
+- Image upload and video upload support
 
-\- Bounding box visualization with class labels and confidence scores
+- Bounding box visualization with class labels and confidence scores
 
-\- Configurable confidence threshold
+- Configurable confidence threshold
 
-\- Configurable IoU threshold for non-maximum suppression
+- Configurable IoU threshold for non-maximum suppression
 
-\- Selectable YOLO model sizes: Nano, Small, Medium, and Large
+- Selectable YOLO model sizes: Nano, Small, Medium, and Large
 
-\- Structured JSON output using Pydantic schemas
+- Structured JSON output using Pydantic schemas
 
-\- JSON export for downstream systems
+- JSON export for downstream systems
 
-\- Video frame-by-frame inference and detection statistics
+- Video frame-by-frame inference and detection statistics
 
-\- Local inference with no external API key required
-
-
-
-\---
+- Local inference with no external API key required
 
 
 
-\## Architecture
+---
+
+
+
+## Architecture
 
 
 
@@ -148,11 +146,11 @@ Input Image or Video
 
 
 
-\---
+---
 
 
 
-\## Technology Stack
+## Technology Stack
 
 
 
@@ -174,11 +172,11 @@ Input Image or Video
 
 
 
-\---
+---
 
 
 
-\## How YOLO Works
+## How YOLO Works
 
 
 
@@ -190,13 +188,13 @@ For each detected object, YOLO returns:
 
 
 
-\- `class\_id`: Numeric class identifier
+- `class\_id`: Numeric class identifier
 
-\- `class\_name`: Object label such as `person`, `car`, or `dog`
+- `class\_name`: Object label such as `person`, `car`, or `dog`
 
-\- `confidence`: Probability-like score representing model confidence
+- `confidence`: Probability-like score representing model confidence
 
-\- `bounding\_box`: Pixel coordinates of the object location
+- `bounding\_box`: Pixel coordinates of the object location
 
 
 
@@ -204,11 +202,11 @@ The pretrained model uses the COCO dataset class set, which includes 80 common o
 
 
 
-\---
+---
 
 
 
-\## Structured Detection Output
+## Structured Detection Output
 
 
 
@@ -216,7 +214,7 @@ Raw model outputs are converted into validated Pydantic schemas.
 
 
 
-\### Bounding Box Schema
+### Bounding Box Schema
 
 
 
@@ -240,7 +238,7 @@ class BoundingBox(BaseModel):
 
 
 
-\### Detected Object Schema
+### Detected Object Schema
 
 
 
@@ -262,7 +260,7 @@ class DetectedObject(BaseModel):
 
 
 
-\### Frame Result Schema
+### Frame Result Schema
 
 
 
@@ -288,11 +286,11 @@ class FrameDetectionResult(BaseModel):
 
 
 
-\---
+---
 
 
 
-\## Example JSON Output
+## Example JSON Output
 
 
 
@@ -378,11 +376,11 @@ class FrameDetectionResult(BaseModel):
 
 
 
-\---
+---
 
 
 
-\## Project Structure
+## Project Structure
 
 
 
@@ -406,29 +404,29 @@ yolo-detection-pipeline/
 
 
 
-\---
+---
 
 
 
-\## Installation
+## Installation
 
 
 
-\### Prerequisites
+### Prerequisites
 
 
 
-\- Python 3.10 or higher
+- Python 3.10 or higher
 
-\- Git
+- Git
 
-\- Webcam is optional
+- Webcam is optional
 
-\- GPU is optional; the project can run on CPU
+- GPU is optional; the project can run on CPU
 
 
 
-\### Clone the Repository
+### Clone the Repository
 
 
 
@@ -442,7 +440,7 @@ cd yolo-detection-pipeline
 
 
 
-\### Create a Virtual Environment
+### Create a Virtual Environment
 
 
 
@@ -474,7 +472,7 @@ source venv/bin/activate
 
 
 
-\### Install Dependencies
+### Install Dependencies
 
 
 
@@ -486,7 +484,7 @@ python -m pip install -r requirements.txt
 
 
 
-\### Run the Application
+### Run the Application
 
 
 
@@ -514,37 +512,37 @@ The YOLO model weights will be downloaded automatically the first time a selecte
 
 
 
-\---
+---
 
 
 
-\## Usage
+## Usage
 
 
 
-1\. Start the Streamlit application.
+1. Start the Streamlit application.
 
-2\. Select a YOLO model size from the sidebar.
+2. Select a YOLO model size from the sidebar.
 
-3\. Set the confidence threshold and IoU threshold.
+3. Set the confidence threshold and IoU threshold.
 
-4\. Choose either image upload or video upload.
+4. Choose either image upload or video upload.
 
-5\. Upload a file.
+5. Upload a file.
 
-6\. Run detection.
+6. Run detection.
 
-7\. Review bounding boxes, labels, confidence scores, and structured metadata.
+7. Review bounding boxes, labels, confidence scores, and structured metadata.
 
-8\. Export the detection result as JSON if needed.
-
-
-
-\---
+8. Export the detection result as JSON if needed.
 
 
 
-\## Model Size Trade-Offs
+---
+
+
+
+## Model Size Trade-Offs
 
 
 
@@ -566,15 +564,15 @@ The model selection exposes a common machine learning engineering trade-off: lar
 
 
 
-\---
+---
 
 
 
-\## Configuration Parameters
+## Configuration Parameters
 
 
 
-\### Confidence Threshold
+### Confidence Threshold
 
 
 
@@ -582,15 +580,15 @@ The confidence threshold controls which predictions are retained.
 
 
 
-\- Lower threshold, such as `0.30`: detects more objects but may introduce false positives.
+- Lower threshold, such as `0.30`: detects more objects but may introduce false positives.
 
-\- Higher threshold, such as `0.80`: produces fewer but more reliable detections.
+- Higher threshold, such as `0.80`: produces fewer but more reliable detections.
 
-\- Default threshold: `0.50`.
+- Default threshold: `0.50`.
 
 
 
-\### IoU Threshold
+### IoU Threshold
 
 
 
@@ -598,19 +596,19 @@ IoU means Intersection over Union. It is used during non-maximum suppression to 
 
 
 
-\- Lower IoU threshold: removes more overlapping detections.
+- Lower IoU threshold: removes more overlapping detections.
 
-\- Higher IoU threshold: allows more overlapping detections.
+- Higher IoU threshold: allows more overlapping detections.
 
-\- Default threshold: `0.45`.
-
-
-
-\---
+- Default threshold: `0.45`.
 
 
 
-\## Robotics and ML Applications
+---
+
+
+
+## Robotics and ML Applications
 
 
 
@@ -618,7 +616,7 @@ This detection pipeline can be extended for several real-world use cases:
 
 
 
-\### Warehouse Robotics
+### Warehouse Robotics
 
 
 
@@ -626,7 +624,7 @@ A warehouse robot can detect people, packages, forklifts, and obstacles. Boundin
 
 
 
-\### Autonomous Vehicles
+### Autonomous Vehicles
 
 
 
@@ -634,7 +632,7 @@ A vehicle perception system can detect cars, pedestrians, bicycles, buses, truck
 
 
 
-\### Manufacturing Inspection
+### Manufacturing Inspection
 
 
 
@@ -642,7 +640,7 @@ The pretrained YOLO model can be fine-tuned on custom datasets to detect defecti
 
 
 
-\### Security Monitoring
+### Security Monitoring
 
 
 
@@ -650,7 +648,7 @@ The pipeline can detect people and vehicles in camera feeds, count objects over 
 
 
 
-\### Drone Navigation
+### Drone Navigation
 
 
 
@@ -658,11 +656,11 @@ A drone can use object detection as one input for obstacle awareness, target fol
 
 
 
-\---
+---
 
 
 
-\## Production Improvements
+## Production Improvements
 
 
 
@@ -670,57 +668,57 @@ This project is an MVP. A production version could include:
 
 
 
-\- FastAPI backend for asynchronous inference endpoints
+- FastAPI backend for asynchronous inference endpoints
 
-\- Docker containerization
+- Docker containerization
 
-\- GPU deployment using CUDA
+- GPU deployment using CUDA
 
-\- NVIDIA Jetson deployment for edge robotics
+- NVIDIA Jetson deployment for edge robotics
 
-\- ROS or ROS2 integration using detection messages and ROS topics
+- ROS or ROS2 integration using detection messages and ROS topics
 
-\- Object tracking with ByteTrack or DeepSORT
+- Object tracking with ByteTrack or DeepSORT
 
-\- Detection logging to PostgreSQL or MongoDB
+- Detection logging to PostgreSQL or MongoDB
 
-\- Monitoring with Prometheus and Grafana
+- Monitoring with Prometheus and Grafana
 
-\- Model quantization for faster edge-device inference
+- Model quantization for faster edge-device inference
 
-\- Fine-tuning YOLO on a custom domain dataset
+- Fine-tuning YOLO on a custom domain dataset
 
-\- Unit tests for schema validation and coordinate transformations
+- Unit tests for schema validation and coordinate transformations
 
-\- Batch processing and job queue support
-
-
-
-\---
+- Batch processing and job queue support
 
 
 
-\## Limitations
+---
 
 
 
-\- The default pretrained YOLO model only recognizes COCO dataset classes.
-
-\- It cannot reliably detect specialized objects such as manufacturing defects without fine-tuning.
-
-\- CPU inference may be slower for high-resolution video.
-
-\- Object detection does not provide object identity tracking across frames; a tracking model would be needed for that.
-
-\- Confidence scores represent model confidence, not a guaranteed probability of correctness.
+## Limitations
 
 
 
-\---
+- The default pretrained YOLO model only recognizes COCO dataset classes.
+
+- It cannot reliably detect specialized objects such as manufacturing defects without fine-tuning.
+
+- CPU inference may be slower for high-resolution video.
+
+- Object detection does not provide object identity tracking across frames; a tracking model would be needed for that.
+
+- Confidence scores represent model confidence, not a guaranteed probability of correctness.
 
 
 
-\## License
+---
+
+
+
+## License
 
 
 
